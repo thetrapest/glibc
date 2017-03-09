@@ -324,7 +324,4 @@ L(return_null):
 	ret
 END(MEMCHR)
 
-#ifndef USE_AS_WMEMCHR
-strong_alias (memchr, __memchr)
 libc_hidden_builtin_def(memchr)
-#endif

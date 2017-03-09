@@ -35,12 +35,8 @@
 # undef memchr
 #endif
 
-#ifndef weak_alias
-# define __memchr memchr
-#endif
-
 #ifndef MEMCHR
-# define MEMCHR __memchr
+# define MEMCHR memchr
 #endif
 
 /* Search no more than N bytes of S for C.  */
@@ -156,7 +152,4 @@ MEMCHR (void const *s, int c_in, size_t n)
 
   return NULL;
 }
-#ifdef weak_alias
-weak_alias (__memchr, memchr)
-#endif
 libc_hidden_builtin_def (memchr)

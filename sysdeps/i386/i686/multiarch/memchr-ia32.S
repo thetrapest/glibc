@@ -17,7 +17,7 @@
    <http://www.gnu.org/licenses/>.  */
 
 #if IS_IN (libc)
-# define __memchr __memchr_ia32
+# define memchr __memchr_ia32
 
 # ifdef SHARED
 #  undef libc_hidden_builtin_def
@@ -25,7 +25,7 @@
    they will be called without setting up EBX needed for PLT which is
    used by IFUNC.  */
 #  define libc_hidden_builtin_def(name) \
-	.globl __GI_memchr; __GI_memchr = __memchr
+	.globl __GI_memchr; __GI_memchr = memchr
 # endif
 
 # undef weak_alias
